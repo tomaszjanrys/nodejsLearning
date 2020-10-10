@@ -1,0 +1,25 @@
+{
+  "name": "nodejsleraning",
+  "version": "1.0.0",
+  "description": "node js my learning simply app :)",
+  "main": "nodes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon node.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomaszjanrys/nodejsLearning.git"
+  },
+  "author": "tomaszrys@int.pl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tomaszjanrys/nodejsLearning/issues"
+  },
+  "homepage": "https://github.com/tomaszjanrys/nodejsLearning#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
