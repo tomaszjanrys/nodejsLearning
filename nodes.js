@@ -3,15 +3,22 @@ const express = require('express');
 const port = 3333;
 const bodyparser = require('body-parser');
 const app = express();
-
-app.use(bodyparser.json())
-
+const optionsParser = {
+    limit : 100,
+    strict : 'true'
+}
+const optionUrlencoded = {
+    extended : false,
+    inflate: true,
+    parametrLimit : 500
+}
+app.use(bodyparser.urlencoded(optionUrlencoded));
+app.use(bodyparser.json());
 
 app.get('/',(req, res)=>{
-    res.json(200,{
-        id : "111"
-    })
-    res.end();
+    res.setHeader('Content-Type', 'text/plain');
+    res.write('Welcome to my page')
+    res.end(JSON.stringify(req.body,null,2));
     console.log(req.body)
 })
 
