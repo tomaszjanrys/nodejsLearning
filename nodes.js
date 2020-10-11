@@ -1,24 +1,31 @@
 const { json } = require('body-parser');
 const express = require('express');
-const bodyparser = require('body-parser');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser')
+const flash = require('connect-flash')
 const app = express();
-const optionsParser = {
-    limit : 100,
-    strict : 'true'
-}
-const optionUrlencoded = {
-    extended : false,
-    inflate: true,
-    parametrLimit : 500
-}
-app.use(bodyparser.urlencoded(optionUrlencoded));
-app.use(bodyparser.json());
+const router = require('./routes/index')
 
-app.get('/',(req, res)=>{
-    res.setHeader('Content-Type', 'text/plain');
-    res.write('Welcome to my page')
-    res.end(JSON.stringify(req.body,null,2));
-    console.log(req.body)
-})
+
+
+
+//////////SET//////////////////////////
+app.set('view engine', 'ejs' );
+app.set('views','./views');
+/////////USE///////////////////////////////////////////////
+app.use(express.static('public'));
+app.use('/css',express.static(__dirname + './public/css'))
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:true}))
+
+app.use(cookieParser());
+app.use(flash());
+
+/////////USE ROUTER////////////////////////////////////////
+app.use('/',router);
+app.use('/kontakt', router)
+
+///////////////////////////////////////////////////////////
 
 module.exports =app
