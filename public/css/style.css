@@ -1,4 +1,42 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
 body{
-    background-color: lightcoral;
+    background: linear-gradient(to left, rgb(0, 0, 0) ,rgb(44, 44, 44));
     color: rgb(0, 174, 243);
+}
+.jumbotron{
+    box-shadow:0 11px 60px 4px  black;
+    background:linear-gradient(to bottom , blanchedalmond , rgb(209, 194, 170) )
+}
+.allbox{
+    margin: 0;
+}
+.box1{
+    background-image: url('/image/back2.jpg');
+    background-size: cover;
+
+    display: inline-block;
+    height: 600px;
+    transform: skewX(-20deg); 
+    width: 33%;
+
+}
+.box2{
+    background-image: url('/image/back.jpg');
+    background-size: cover;
+    display: inline-block;
+    height: 600px;
+    transform: skewX(-20deg); 
+    width: 33%;
+}
+.box3{
+    background-image: url('/image/back3.jpg');
+    background-size: cover;
+    display: inline-block;
+    height: 600px;
+    transform: skewX(-20deg); 
+    width: 33%;
 }

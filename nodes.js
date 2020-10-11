@@ -16,6 +16,7 @@ app.set('views','./views');
 app.use(express.static('public'));
 app.use('/css',express.static(__dirname + './public/css'))
 
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
@@ -24,7 +25,8 @@ app.use(flash());
 
 /////////USE ROUTER////////////////////////////////////////
 app.use('/',router);
-app.use('/kontakt', router)
+app.use('/kontakt', router);
+app.use('/register', router);
 
 ///////////////////////////////////////////////////////////
 
