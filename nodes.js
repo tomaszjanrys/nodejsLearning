@@ -15,14 +15,15 @@ app.set('views','./views');
 /////////USE///////////////////////////////////////////////
 app.use(express.static('public'));
 app.use('/css',express.static(__dirname + './public/css'))
+app.use('/image', express.static(__dirname + './public/image'))
 
-
+//middelware 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
 
 app.use(cookieParser());
 app.use(flash());
-
+///end middelware///
 /////////USE ROUTER////////////////////////////////////////
 app.use('/',router);
 app.use('/kontakt', router);
