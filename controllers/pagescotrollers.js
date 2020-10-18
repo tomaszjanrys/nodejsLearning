@@ -1,5 +1,5 @@
 
-//export akcji home
+//export akcji home do pliku index w route
 exports.home = ('/',(req,res)=>{
     res.render('home')
 })
