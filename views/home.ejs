@@ -13,6 +13,10 @@
     <h1 class="display-4">Middleware polska</h1>
     <p class="lead">This is your futer....</p>
     <hr>
+    <%if (formMessage.length) { %>
+        <%= formMessage %>
+        <% } %>
+       
     <p class="lead">
    
         <a class="btn btn-dark btn-sm " href="/register">Register</a>
